@@ -31,7 +31,7 @@ body {
 /* 3. Responsive Font Sizes: Use 'vw' or smaller 'rem' so they don't break lines */
 .elegant-text { 
   font-family: 'Playfair Display', serif; 
-  font-size: clamp(2rem, 8vw, 4.5rem); /* Shrinks on mobile, grows on desktop */
+  font-size: clamp(2rem, 8vw, 3.5rem); /* Shrinks on mobile, grows on desktop */
   font-style: italic; 
   color: #6d6875; 
   margin-bottom: 20px;
