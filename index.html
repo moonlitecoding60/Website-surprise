@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- 1. THIS IS THE MOST IMPORTANT LINE FOR MOBILE/NETLIFY SIZING -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mother's Day Gift</title>
     
-    <!-- 2. LINK TO YOUR GOOGLE FONTS -->
-    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- FIXED GOOGLE FONTS -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
+
   <!-- Part 1: Intro -->
   <div id="part1" class="section">
     <h1 class="elegant-text">May sent you a gift.<br>Do you wanna see what it is?</h1>
@@ -21,7 +23,7 @@
 
   <!-- Part 2: Heart & Message -->
   <div id="part2" class="section" style="display:none;">
-    <div class="heart">🤱💕</div>
+    <div class="emoji-large">🤱💕</div>
     <h1 class="elegant-text">Happy Mother's Day!</h1>
     <p class="elegant-subtext">But wait, there's more...</p>
     <div class="emoji-wrapper">
@@ -45,34 +47,34 @@
     
     <div class="scrapbook-grid">
       <div class="photo-card tilt-left">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 1">
         <p class="polaroid-caption">Moment 1 ❤️</p>
       </div> 
 
       <div class="photo-card tilt-right">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 2">
         <p class="polaroid-caption">Moment 2 ✨</p>
       </div> 
 
       <div class="photo-card tilt-left">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 3">
         <p class="polaroid-caption">Moment 3 📸</p>
       </div>
         
       <div class="photo-card tilt-right">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 4">
         <p class="polaroid-caption">Moment 4 🌸</p>
       </div> 
 
-      <div class="photo-card tilt-left">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-        <p class="polaroid-caption">Moment 5 🥰</p>
-      </div> 
-
       <div class="photo-card tilt-right">
-        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-        <p class="polaroid-caption">Moment 6 💖</p>
-      </div>
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 4">
+        <p class="polaroid-caption">Moment 5 🌸</p>
+      </div> 
+        
+      <div class="photo-card tilt-right">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png" alt="Memory 4">
+        <p class="polaroid-caption">Moment 6 🌸</p>
+      </div> 
     </div> 
 
     <p class="scrapbook-caption">"These memories have a special place in my heart."</p>
@@ -83,9 +85,12 @@
   <div id="part4" class="section" style="display:none;">
     <div class="letter-paper">
       <h2 class="letter-title">Dear Mom,</h2>
-      <p class="letter-content">I don’t think I say this enough, but thank you for everything you do, even the things no one notices. Thank you for the early mornings, the late nights, the quiet sacrifices, and the love you give so naturally that sometimes people forget how much strength it takes. You’ve been my comfort on difficult days and my biggest supporter during the good ones. No matter how stressful life gets, knowing you’re there somehow makes things feel lighter. Your patience, kindness, and love shaped so much of who I am today. I know being a mother isn’t easy. There are days filled with exhaustion, worry, and responsibilities that never seem to end. Yet somehow, you still manage to care for everyone with so much warmth. That kind of love is rare, and I hope you know how deeply appreciated you are. Thank you for every lesson, every hug, every encouraging word, and every moment you stayed strong for the people you love. Some of my favorite memories exist because of you. Today is about celebrating you — not just as a mother, but as a person with the biggest heart and the strongest soul. You deserve all the happiness, love, and peace this world can offer. No matter how old I get, I will always be grateful to call you my mom. 
-          Happy Mother’s Day. I love you always.
-        <!-- (Keep your full text here) -->
+      <p class="letter-content">
+        I don’t think I say this enough, but thank you for everything you do, even the things no one notices. Thank you for the early mornings, the late nights, the quiet sacrifices, and the love you give so naturally that sometimes people forget how much strength it takes. 
+        <br><br>
+        You’ve been my comfort on difficult days and my biggest supporter during the good ones. No matter how stressful life gets, knowing you’re there somehow makes things feel lighter. Your patience, kindness, and love shaped so much of who I am today.
+        <br><br>
+        Today is about celebrating you — not just as a mother, but as a person with the biggest heart and the strongest soul. You deserve all the happiness, love, and peace this world can offer. 
       </p>
       <p class="letter-signature">Love always,<br>May</p>
     </div>
@@ -94,4 +99,5 @@
 
 <script src="script.js"></script>
 </body>
-</html>
+    </html>
+    
