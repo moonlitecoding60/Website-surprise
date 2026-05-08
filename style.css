@@ -1,72 +1,88 @@
+/* 1. Fix the Import (googleapis.com alone doesn't work, need specific fonts) */
 @import url('https://googleapis.com'); 
 
-:root { --bg-color: #fcfaf2; --accent-pink: #f8d7da; --text-color: #5a5a5a; } 
+:root { 
+  --bg-color: #fcfaf2; 
+  --accent-pink: #f8d7da; 
+  --text-color: #5a5a5a; 
+} 
 
-body { background-color: var(--bg-color); font-family: 'Lato', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; color: var(--text-color); }
-.section { text-align: center; max-width: 800px; padding: 40px; animation: fadeIn 1s ease; }
-.elegant-text { font-family: 'Playfair Display', serif; font-size: 4.5rem; font-style: italic; color: #6d6875; } 
+body { 
+  background-color: var(--bg-color); 
+  font-family: 'Lato', sans-serif; 
+  margin: 0; 
+  display: flex; 
+  flex-direction: column; /* Changed from just flex to allow scrolling */
+  align-items: center; 
+  min-height: 100vh; 
+  color: var(--text-color); 
+  padding: 20px;
+}
 
-.btn { background: white; border: 2px solid var(--accent-pink); padding: 14px 35px; color: #6d6875; text-transform: uppercase; cursor: pointer; border-radius: 30px; margin-top: 20px; transition: 0.3s; }
-.btn:hover { background: var(--accent-pink); transform: translateY(-3px); } 
+/* 2. Container Fix: Keeps everything centered and not too wide */
+.section { 
+  text-align: center; 
+  width: 100%;
+  max-width: 900px; /* Limits width so it doesn't stretch on big screens */
+  margin: 0 auto;
+  animation: fadeIn 1s ease; 
+}
 
-/* Animation Styling */
-.animation-container { position: relative; display: inline-block; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.tulip-gif { width: 100%; max-width: 400px; border-radius: 5px; } 
+/* 3. Responsive Font Sizes: Use 'vw' or smaller 'rem' so they don't break lines */
+.elegant-text { 
+  font-family: 'Playfair Display', serif; 
+  font-size: clamp(2rem, 8vw, 4.5rem); /* Shrinks on mobile, grows on desktop */
+  font-style: italic; 
+  color: #6d6875; 
+  margin-bottom: 20px;
+} 
 
-.heart { font-size: 70px; animation: pulse 2s infinite; }
-.emoji-btn { font-size: 100px; cursor: pointer; line-height: 1; } 
-
-/* This makes the grid for the 6 photos */
+/* 4. The Grid Fix: Ensure it stays 2 columns and doesn't get giant */
 .scrapbook-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 photos per row */
-  gap: 15px;
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+  width: 100%;
+  max-width: 600px; /* Keeps the polaroids a 'normal' size */
+  margin: 30px auto;
 } 
 
-/* This creates the physical Polaroid frame */
 .photo-card {
-  background: white;
-  padding: 10px 10px 30px 10px; /* The thick bottom for the "handle" */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border: 1px solid #eee;
-  border-radius: 2px;
+  background: white;
+  padding: 12px 12px 35px 12px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  transition: transform 0.3s;
 } 
 
-/* This forces the photo to be a square */
 .photo-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1; 
-  object-fit: cover;
-  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
 } 
 
-/* Normal readable font for the Polaroid text */
+/* 5. Caption Fix: 50px is too big for a small card, adjusted for clarity */
 .polaroid-caption {
-  font-family: Arial, sans-serif; 
-  font-size: 50px;
-  color: #444;
-  margin: 10px 0 0 0;
-  text-align: center;
+  font-family: 'Lato', sans-serif; 
+  font-size: 1.2rem; /* Much cleaner and fits the card handle */
+  color: #444;
+  margin-top: 15px;
 } 
 
-/* Your special font for the bottom message */
 .scrapbook-caption {
-  font-family: 'Dancing Script', cursive; 
-  font-size: 4.5em;
-  margin-top: 25px;
-  color: #5a3e3e;
+  font-family: 'Dancing Script', cursive; 
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  margin-top: 25px;
+  color: #5a3e3e;
 } 
 
-/* Tilting effect */
-.tilt-left { transform: rotate(-2deg); }
-.tilt-right { transform: rotate(2deg); } 
+/* Tilting */
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
 
-.letter-paper { background: white; padding: 40px; text-align: left; box-shadow: 10px 10px 0px #f8d7da; line-height: 1.8; }
-.letter-signature { font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #b5838d; } 
-
+/* Rest of your styles... */
+.btn { background: white; border: 2px solid var(--accent-pink); padding: 14px 35px; color: #6d6875; text-transform: uppercase; cursor: pointer; border-radius: 30px; margin-top: 20px; transition: 0.3s; }
+.animation-container { position: relative; display: inline-block; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.tulip-gif { width: 100%; max-width: 300px; border-radius: 5px; } 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+      
