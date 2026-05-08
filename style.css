@@ -12,47 +12,99 @@ body {
   font-family: 'Lato', sans-serif; 
   margin: 0; 
   display: flex; 
-  flex-direction: column; /* Changed from just flex to allow scrolling */
+  flex-direction: column; 
   align-items: center; 
   min-height: 100vh; 
   color: var(--text-color); 
   padding: 20px;
+  -webkit-text-size-adjust: 100%; /* Prevents text shrinking on iPhones */
 }
 
-/* 2. Container Fix: Keeps everything centered and not too wide */
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section { 
   text-align: center; 
   width: 100%;
-  max-width: 900px; /* Limits width so it doesn't stretch on big screens */
   margin: 0 auto;
   animation: fadeIn 1s ease; 
 }
 
-/* 3. Responsive Font Sizes: Use 'vw' or smaller 'rem' so they don't break lines */
+/* BIG EMOJIS & BUTTONS */
+.emoji-large, .emoji-btn {
+  font-size: clamp(5rem, 20vw, 7.5rem); /* Extra large for mobile */
+  margin: 20px 0;
+  display: block;
+}
+
+.emoji-btn {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.emoji-btn:active { transform: scale(0.9); }
+
+/* LARGE RESPONSIVE TEXT */
 .elegant-text { 
   font-family: 'Playfair Display', serif; 
-  font-size: clamp(2rem, 8vw, 3.5rem); /* Shrinks on mobile, grows on desktop */
+  font-size: clamp(2.5rem, 10vw, 3.8rem); 
   font-style: italic; 
   color: #6d6875; 
   margin-bottom: 20px;
+  line-height: 1.2;
 } 
 
-/* 4. The Grid Fix: Ensure it stays 2 columns and doesn't get giant */
+.elegant-subtext {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 20px;
+  color: #888;
+}
+
+.instruction {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6d6875;
+  margin-top: 10px;
+}
+
+/* BUTTON STYLING */
+.btn { 
+  background: white; 
+  border: 2px solid var(--accent-pink); 
+  padding: 18px 45px; 
+  font-size: 1.2rem;
+  color: #6d6875; 
+  text-transform: uppercase; 
+  cursor: pointer; 
+  border-radius: 50px; 
+  transition: 0.3s; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn:hover { background: var(--accent-pink); color: white; }
+
+/* SCRAPBOOK GRID */
 .scrapbook-grid {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   gap: 20px;
   width: 100%;
-  max-width: 600px; /* Keeps the polaroids a 'normal' size */
+  max-width: 600px; 
   margin: 30px auto;
 } 
 
 .photo-card {
   background: white;
-  padding: 12px 12px 35px 12px; 
+  padding: 12px 12px 30px 12px; 
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   border-radius: 2px;
-  transition: transform 0.3s;
 } 
 
 .photo-card img {
@@ -61,28 +113,56 @@ body {
   object-fit: cover;
 } 
 
-/* 5. Caption Fix: 50px is too big for a small card, adjusted for clarity */
 .polaroid-caption {
   font-family: 'Lato', sans-serif; 
-  font-size: 1.2rem; /* Much cleaner and fits the card handle */
-  color: #444;
-  margin-top: 15px;
+  font-size: 1.1rem; 
+  margin-top: 12px;
 } 
 
 .scrapbook-caption {
   font-family: 'Dancing Script', cursive; 
-  font-size: clamp(2rem, 5vw, 3.5rem); 
-  margin-top: 25px;
+  font-size: clamp(2.2rem, 8vw, 3.5rem); 
   color: #5a3e3e;
+  padding: 0 10px;
 } 
 
-/* Tilting */
+/* FINAL LETTER */
+.letter-paper {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.letter-title { 
+  font-family: 'Playfair Display', serif; 
+  font-size: clamp(2rem, 8vw, 2.5rem); 
+  margin-bottom: 20px;
+}
+
+.letter-content { 
+  font-size: clamp(1.1rem, 4.5vw, 1.3rem); 
+  line-height: 1.7;
+}
+
+.letter-signature { 
+  font-family: 'Dancing Script', cursive; 
+  font-size: 2.5rem; 
+  margin-top: 30px; 
+  color: #5a3e3e;
+}
+
+/* ANIMATIONS & EFFECTS */
 .tilt-left { transform: rotate(-3deg); }
 .tilt-right { transform: rotate(3deg); }
+.animation-container { background: white; padding: 15px; border-radius: 15px; display: inline-block; }
+.tulip-gif { width: 100%; max-width: 350px; border-radius: 10px; } 
 
-/* Rest of your styles... */
-.btn { background: white; border: 2px solid var(--accent-pink); padding: 14px 35px; color: #6d6875; text-transform: uppercase; cursor: pointer; border-radius: 30px; margin-top: 20px; transition: 0.3s; }
-.animation-container { position: relative; display: inline-block; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.tulip-gif { width: 100%; max-width: 300px; border-radius: 5px; } 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(10px); } 
+  to { opacity: 1; transform: translateY(0); } 
+  }
+    
