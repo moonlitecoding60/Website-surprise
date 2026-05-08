@@ -1,115 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <!-- 1. THIS IS THE MOST IMPORTANT LINE FOR MOBILE/NETLIFY SIZING -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother's Day Gift</title>
+    
+    <!-- 2. LINK TO YOUR GOOGLE FONTS -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- PASTE YOUR CODEPEN HTML HERE -->
 <div class="container">
-  <!-- Part 1: Intro -->
-  <div id="part1" class="section">
-    <h1 class="elegant-text">May sent you a gift.<br>Do you wanna see what it is?</h1>
-    <button class="btn" onclick="showPart(2)">Yes</button>
-  </div> 
+  <!-- Part 1: Intro -->
+  <div id="part1" class="section">
+    <h1 class="elegant-text">May sent you a gift.<br>Do you wanna see what it is?</h1>
+    <button class="btn" onclick="showPart(2)">Yes</button>
+  </div> 
 
-  <!-- Part 2: Heart & Massive Letter -->
-  <div id="part2" class="section" style="display:none;">
-    <div class="heart">🤱💕</div>
-    <h1 class="elegant-text">Happy Mother's Day!</h1>
-    <p class="elegant-subtext">But wait, there's more...</p>
-    <div class="emoji-wrapper">
-      <div class="emoji-btn" onclick="showPart('bouquet')">🎁</div>
-      <p class="instruction">Click the gift</p>
-    </div>
-  </div> 
+  <!-- Part 2: Heart & Message -->
+  <div id="part2" class="section" style="display:none;">
+    <div class="heart">🤱💕</div>
+    <h1 class="elegant-text">Happy Mother's Day!</h1>
+    <p class="elegant-subtext">But wait, there's more...</p>
+    <div class="emoji-wrapper">
+      <div class="emoji-btn" onclick="showPart('bouquet')">🎁</div>
+      <p class="instruction">Click the gift</p>
+    </div>
+  </div> 
 
-  <!-- Part 3: Animated Bouquet Reveal -->
-  <div id="part-bouquet" class="section" style="display:none;">
-    <h1 class="elegant-text">For you, Mom</h1>
-    <div class="animation-container">
-      <!-- REPLACE THE SRC BELOW WITH YOUR FAVORITE TULIP GIF LINK -->
-      <img src="https://media1.giphy.com/media/v1.Y2lkPTgyYTE0OTNiN2h2ZHhrbWU4aTk4MzR2cjBzOW9tdnVocGN2bXF0NGsyOWdreDVvayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nqUEORnZB4NjdZdPPv/200w.webp" alt="Tulip Animation" class="tulip-gif" style="width:100%; max-width:300px;">
-    </div>
-    <button class="btn" onclick="showPart(3)" style="margin-top: 30px;">Look at our memories ➔</button>
-  </div> 
+  <!-- Part 3: Animated Bouquet Reveal -->
+  <div id="part-bouquet" class="section" style="display:none;">
+    <h1 class="elegant-text">For you, Mom</h1>
+    <div class="animation-container">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTgyYTE0OTNiN2h2ZHhrbWU4aTk4MzR2cjBzOW9tdnVocGN2bXF0NGsyOWdreDVvayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nqUEORnZB4NjdZdPPv/200w.webp" alt="Tulip Animation" class="tulip-gif">
+    </div>
+    <button class="btn" onclick="showPart(3)" style="margin-top: 30px;">Look at our memories ➔</button>
+  </div> 
 
-<!-- Part 4: Scrapbook -->
-<div id="part3" class="section" style="display:none;">
-  <h1 class="elegant-text">My favorite moments with you</h1>
-  
-  <div class="scrapbook-grid">
-    <!-- Polaroid 1 -->
-    <div class="photo-card tilt-left">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 1 ❤️</p>
-    </div> 
+  <!-- Part 4: Scrapbook -->
+  <div id="part3" class="section" style="display:none;">
+    <h1 class="elegant-text">My favorite moments with you</h1>
+    
+    <div class="scrapbook-grid">
+      <div class="photo-card tilt-left">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 1 ❤️</p>
+      </div> 
 
-    <!-- Polaroid 2 -->
-    <div class="photo-card tilt-right">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 2 ✨</p>
-    </div> 
+      <div class="photo-card tilt-right">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 2 ✨</p>
+      </div> 
 
-    <!-- Polaroid 3 -->
-    <div class="photo-card tilt-left">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 3 📸</p>
-    </div>
-      
-    <!-- Polaroid 4 -->
-    <div class="photo-card tilt-right">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 4 🌸</p>
-    </div> 
+      <div class="photo-card tilt-left">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 3 📸</p>
+      </div>
+        
+      <div class="photo-card tilt-right">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 4 🌸</p>
+      </div> 
 
-    <!-- Polaroid 5 -->
-    <div class="photo-card tilt-left">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 5 🥰</p>
-    </div> 
+      <div class="photo-card tilt-left">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 5 🥰</p>
+      </div> 
 
-    <!-- Polaroid 6 -->
-    <div class="photo-card tilt-right">
-      <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
-      <p class="polaroid-caption">Moment 6 💖</p>
-    </div>
-  </div> 
+      <div class="photo-card tilt-right">
+        <img src="https://i.postimg.cc/sXxyxmJz/Your-photo-20260508-090211-0000.png">
+        <p class="polaroid-caption">Moment 6 💖</p>
+      </div>
+    </div> 
 
-  <!-- Main caption in the elegant font -->
-  <p class="scrapbook-caption">"These memories have a special place in my heart."</p>
-  
-  <button class="btn" onclick="showPart(4)">Read my letter ➔</button>
+    <p class="scrapbook-caption">"These memories have a special place in my heart."</p>
+    <button class="btn" onclick="showPart(4)">Read my letter ➔</button>
+  </div> 
+
+  <!-- Part 5: Final Letter -->
+  <div id="part4" class="section" style="display:none;">
+    <div class="letter-paper">
+      <h2 class="letter-title">Dear Mom,</h2>
+      <p class="letter-content">
+        I don’t think I say this enough, but thank you for everything you do...
+        <!-- (Keep your full text here) -->
+      </p>
+      <p class="letter-signature">Love always,<br>May</p>
+    </div>
+  </div>
 </div>
 
-
-  </div> 
-
-  <!-- Part 5: Final Letter -->
-  <div id="part4" class="section" style="display:none;">
-    <div class="letter-paper">
-      <h2 class="letter-title">Dear Mom,</h2>
-      <p class="letter-content">
-        I don’t think I say this enough, but thank you for everything you do, even the things no one notices. Thank you for the early mornings, the late nights, the quiet sacrifices, and the love you give so naturally that sometimes people forget how much strength it takes. 
-
-You’ve been my comfort on difficult days and my biggest supporter during the good ones. No matter how stressful life gets, knowing you’re there somehow makes things feel lighter. Your patience, kindness, and love shaped so much of who I am today. 
-
-I know being a mother isn’t easy. There are days filled with exhaustion, worry, and responsibilities that never seem to end. Yet somehow, you still manage to care for everyone with so much warmth. That kind of love is rare, and I hope you know how deeply appreciated you are. 
-
-Thank you for every lesson, every hug, every encouraging word, and every moment you stayed strong for the people you love. Some of my favorite memories exist because of you. 
-
-Today is about celebrating you — not just as a mother, but as a person with the biggest heart and the strongest soul. You deserve all the happiness, love, and peace this world can offer. 
-
-No matter how old I get, I will always be grateful to call you my mom. 
-
-Happy Mother’s Day. I love you always.
-        <br><br>
-        I hope this small digital gift brings a smile to your face today. I love you more than words can say.
-      </p>
-      <p class="letter-signature">Love always,<br>May</p>
-    </div>
-  </div>
-</div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
